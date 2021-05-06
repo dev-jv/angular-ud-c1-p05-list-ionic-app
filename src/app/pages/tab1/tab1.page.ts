@@ -8,6 +8,12 @@ import {WishesService} from '../../services/wishes.service';
 })
 export class Tab1Page {
 
-  constructor(public whishesService: WishesService ) {}
+  wishes: any[] = [];
+
+  constructor(public whishesService: WishesService ) {
+
+    // console.log(whishesService.lists);
+
+  }
 
 }
