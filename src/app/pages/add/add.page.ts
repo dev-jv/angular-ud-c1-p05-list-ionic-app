@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {WishesService} from '../../services/wishes.service';
 
 @Component({
   selector: 'app-add',
