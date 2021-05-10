@@ -21,10 +21,10 @@ export class AddPage implements OnInit {
 
     this.list = whishesService.getList(listId);
 
-    console.log(listId);
-    console.log(this.list);
-    console.log(this.list.items);
-    console.log(this.itemName);
+    // console.log(listId);
+    // console.log(this.list);
+    // console.log(this.list.items);
+    // console.log(this.itemName);
   }
 
   ngOnInit() {
@@ -47,5 +47,24 @@ export class AddPage implements OnInit {
     this.whishesService.saveLocalStg();
   }
 
+  changeCheck(item: ListItem) {
+    console.log(item);
+
+
+    const pending = this.list.items.filter(itemStat => !itemStat.completed).length;
+
+    console.log({pending});
+    if (pending === 0) {
+      this.list.finishedIn = new Date();
+      this.list.finished = true;
+    } else {
+      this.list.finishedIn = null;
+      this.list.finished = false;
+    }
+
+    this.whishesService.saveLocalStg();
+
+    console.log(this.whishesService.lists);
+  }
 
 }
