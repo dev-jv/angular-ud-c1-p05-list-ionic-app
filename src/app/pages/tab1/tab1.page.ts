@@ -42,7 +42,11 @@ export class Tab1Page {
             if(data.title.length === 0) {
               return;
             }
-            this.whishesService.createList(data.title);
+            const listId = this.whishesService.createList(data.title);
+            console.log(listId);
+
+
+            this.router.navigateByUrl(`/tabs/tab1/add/${listId}`);
           }
         }
       ]

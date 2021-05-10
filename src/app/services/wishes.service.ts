@@ -27,6 +27,8 @@ export class WishesService {
     const newList = new List(title);
     this.lists.push(newList);
     this.saveLocalStg();
+
+    return newList.id;
   }
 
   saveLocalStg() {
@@ -41,5 +43,14 @@ export class WishesService {
       this.lists = [];
     }
   }
-  
+
+  getList( id: string | number) {
+    id = Number(id);
+
+    return this.lists.find( list => {
+      return list.id === id;
+    });
+
+  }
+
 }

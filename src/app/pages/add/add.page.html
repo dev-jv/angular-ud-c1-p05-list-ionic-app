@@ -5,7 +5,7 @@
         <ion-back-button color="tertiary" default-href="/"></ion-back-button>
     </ion-button>
 
-    <ion-title>Create new list</ion-title>
+    <ion-title>{{list.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,8 +13,9 @@
 
   <ion-list>
     <ion-item>
-      <ion-label position="floating">New list</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label position="floating">New item</ion-label>
+<!--      <ion-input #term (keyup.enter)="addItems(term.value)" type="text"></ion-input>-->
+      <ion-input [(ngModel)]="itemName" (keyup.enter)="addItems()" type="text"></ion-input>
     </ion-item>
   </ion-list>
 
@@ -23,9 +24,9 @@
       <ion-label>To do</ion-label>
     </ion-list-header>
 
-    <ion-item>
+    <ion-item *ngFor="let it of list.items">
       <ion-checkbox slot="start" color="tertiary"></ion-checkbox>
-      <ion-label>Maple defoliation</ion-label>
+      <ion-label>{{it.desc}}</ion-label>
     </ion-item>
 
   </ion-list>
