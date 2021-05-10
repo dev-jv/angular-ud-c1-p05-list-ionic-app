@@ -50,7 +50,6 @@ export class AddPage implements OnInit {
   changeCheck(item: ListItem) {
     console.log(item);
 
-
     const pending = this.list.items.filter(itemStat => !itemStat.completed).length;
 
     console.log({pending});
@@ -65,6 +64,11 @@ export class AddPage implements OnInit {
     this.whishesService.saveLocalStg();
 
     console.log(this.whishesService.lists);
+  }
+
+  delete(i: number) {
+    this.list.items.splice(i, 1);
+    this.whishesService.saveLocalStg();
   }
 
 }
