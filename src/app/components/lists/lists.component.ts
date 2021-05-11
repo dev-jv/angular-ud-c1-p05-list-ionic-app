@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {WishesService} from '../../services/wishes.service';
 import {Router} from '@angular/router';
 import {List} from '../../models/list.model';
+import {CompletedFilterPipe} from '../../pipes/completed-filter.pipe';
 
 @Component({
   selector: 'app-lists',
@@ -19,6 +20,7 @@ export class ListsComponent implements OnInit {
   ngOnInit() {}
 
   selectedList(list: List) {
+    console.log(list);
     if(this.finished) {
       this.router.navigateByUrl(`/tabs/tab2/add/${list.id}`);
     } else {
