@@ -29,4 +29,8 @@ export class ListsComponent implements OnInit {
 
   };
 
+  delete(list: List) {
+    this.whishesService.deleteList(list);
+  }
+
 }

@@ -6,7 +6,7 @@ import {List} from '../models/list.model';
 })
 export class WishesService {
 
-  lists: List [] = [];
+  lists: List[] = [];
 
   constructor() {
 
@@ -29,6 +29,11 @@ export class WishesService {
     this.saveLocalStg();
 
     return newList.id;
+  }
+
+  deleteList( list: List) {
+    this.lists = this.lists.filter(lst => lst !== list);
+    this.saveLocalStg();
   }
 
   saveLocalStg() {
