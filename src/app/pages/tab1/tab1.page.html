@@ -8,6 +8,9 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
+
+    <app-lists></app-lists>
+
     <ion-item *ngFor="let list of whishesService.lists" detail (click)="selectedList(list)">
       <ion-label color="medium">{{list.title}}</ion-label>
       <ion-note slot="end" color="tertiary">{{list.items.length}} </ion-note>
