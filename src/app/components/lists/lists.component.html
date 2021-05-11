@@ -1,3 +1,6 @@
-<p>
-  lists works!
-</p>
+  <ion-list>
+    <ion-item *ngFor="let list of whishesService.lists" detail (click)="selectedList(list)">
+      <ion-label color="medium">{{list.title}}</ion-label>
+      <ion-note slot="end" color="tertiary">{{list.items.length}} </ion-note>
+    </ion-item>
+  </ion-list>

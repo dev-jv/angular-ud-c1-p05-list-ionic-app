@@ -57,9 +57,9 @@ export class Tab1Page {
 
   }
 
-  selectedList(list: List) {
-    console.log(list);
-    this.router.navigateByUrl(`/tabs/tab1/add/${list.id}`);
-  };
+  // selectedList(list: List) {
+  //   console.log(list);
+  //   this.router.navigateByUrl(`/tabs/tab1/add/${list.id}`);
+  // };
 
 }
