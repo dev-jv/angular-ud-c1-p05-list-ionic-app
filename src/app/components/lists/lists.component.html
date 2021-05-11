@@ -7,11 +7,17 @@
         <ion-note slot="end" color="tertiary">{{list.items.length}} </ion-note>
       </ion-item>
 
-            <ion-item-options side="end">
-              <ion-item-option (click)="delete(list)" color="light">
-                <ion-icon slot="icon-only" name="close"></ion-icon>
-              </ion-item-option>
-            </ion-item-options>
+      <ion-item-options side="end">
+        <ion-item-option (click)="delete(list)" color="light">
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+
+      <ion-item-options side="start">
+        <ion-item-option (click)="edit(list)" color="light">
+          <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
 
     </ion-item-sliding>
 

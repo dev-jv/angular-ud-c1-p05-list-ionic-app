@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {WishesService} from '../../services/wishes.service';
 import {Router} from '@angular/router';
 import {AlertController} from '@ionic/angular';
-import {List} from "../../models/list.model";
+import {List} from '../../models/list.model';
 
 @Component({
   selector: 'app-tab1',
